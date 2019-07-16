@@ -3,6 +3,7 @@
     <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
   </head>
   <body>
+    <center>
       <div>
         <button id="prev">Previous</button>
         <button id="next">Next</button>
@@ -10,6 +11,7 @@
         <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
       </div>
       <canvas id="the-canvas"></canvas>
+    <center> 
     <script>
       // If absolute URL from the remote server is provided, configure the CORS
       // header on that server.
@@ -24,7 +26,7 @@
           pageNum = 1,
           pageRendering = false,
           pageNumPending = null,
-          scale = 0.8,
+          scale = 1.5,
           canvas = document.getElementById('the-canvas'),
           ctx = canvas.getContext('2d');
 
