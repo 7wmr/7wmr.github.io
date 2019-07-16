@@ -112,7 +112,10 @@
       }
       document.getElementById('next').addEventListener('click', onNextPage);
 
-      document.getElementById('download');
+      function onDownload() {
+        window.location.href = url;
+      };
+      document.getElementById('download').addEventListener('click', onDownload);
 
       /**
        * Asynchronously downloads PDF.
