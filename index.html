@@ -7,16 +7,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <body>
-    <center>
-      <div>
-        <button id="prev" type="button" class="btn btn-secondary btn-sm">Previous</button>
-        <button id="next" type="button" class="btn btn-secondary btn-sm">Next</button>
-        &nbsp; &nbsp;
-        <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-      </div>
-      <br><br>
-      <canvas style="1px solid #cbcbcb" id="the-canvas"></canvas>
-    <center> 
+    <div class="container">
+      <center>
+        <div>
+          <button id="prev" type="button" class="btn btn-secondary btn-sm">Previous</button>
+          <button id="next" type="button" class="btn btn-secondary btn-sm">Next</button>
+          &nbsp; &nbsp;
+          <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+        </div>
+        <br><br>
+        <canvas style="border: .5px solid #cbcbcb" id="the-canvas"></canvas>
+      <center>
+    </div>
     <script>
       // If absolute URL from the remote server is provided, configure the CORS
       // header on that server.
