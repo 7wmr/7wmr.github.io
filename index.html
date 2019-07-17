@@ -8,22 +8,27 @@
   </head>
   <body>
     <div class="container">
-      <center>
-        <br><br>
-        <div>
-          <button id="prev" type="button" class="btn btn-light btn-sm">Previous</button>
-          <button id="next" type="button" class="btn btn-light btn-sm">Next</button>
-          <button id="download" type="submit" class="btn btn-light btn-sm">Download</button>
-          &nbsp; &nbsp;
-          <span class="badge badge-pill badge-primary">
-            <span id="page_num"></span> / <span id="page_count"></span>
-          </span>
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6">
+            <button id="prev" type="button" class="btn btn-light btn-sm">Previous</button>
+            <button id="next" type="button" class="btn btn-light btn-sm">Next</button>
+            <button id="download" type="submit" class="btn btn-light btn-sm">Download</button>
+            &nbsp; &nbsp;
+            <span class="badge badge-pill badge-primary">
+              <span id="page_num"></span> / <span id="page_count"></span>
+            </span>
+          </div>
+          <div class="col-3"></div>
         </div>
-        <br><br>
-        <canvas style="border: .5px solid #cbcbcb" id="the-canvas"></canvas>
-        <br><br>
-      <center>
-    </div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-8">
+            <canvas style="border: .5px solid #cbcbcb" id="the-canvas"></canvas>
+          </div> 
+          <div class="col-2"></div>
+        </div>
+      </div>
     <script>
       // If absolute URL from the remote server is provided, configure the CORS
       // header on that server.
