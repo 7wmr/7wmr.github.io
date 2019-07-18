@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-1"></div>
         <div class="col-3" align="left">
-          <select class="form-control form-control-sm" style="width:150px">
+          <select id="cv_type" class="form-control form-control-sm" style="width:150px">
             <option id="compact" selected>Compact</option>
             <option id="extended">Extended</option>
           </select>       
@@ -50,8 +50,13 @@
     <script>
       // If absolute URL from the remote server is provided, configure the CORS
       // header on that server.
-      var url = 'https://raw.githubusercontent.com/7wmr/curriculum-vitae/release/out/CV-RICHARD-NEAVE-E.pdf';
-      // Loaded via <script> tag, create shortcut to access PDF.js exports.
+      var type_map = {
+        extended: 'E',
+        compact: 'C'
+      };
+
+      var base = 'https://raw.githubusercontent.com/7wmr/curriculum-vitae/release/out/CV-RICHARD-NEAVE-';
+      var url = base + 'E.pdf';      // Loaded via <script> tag, create shortcut to access PDF.js exports.
       var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
       // The workerSrc property shall be specified.
