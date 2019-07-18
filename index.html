@@ -148,7 +148,6 @@
       };
       document.getElementById('download').addEventListener('click', onDownload);
 
-
       function onTypeChange() {
         var url = base + type_map[getSelectedType()] +'.pdf';
         pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
