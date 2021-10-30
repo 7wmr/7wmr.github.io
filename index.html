@@ -14,10 +14,10 @@
       <div class="row">
         <div class="col-1"></div>
         <div class="col-3" align="left">
-          <select id="cv_type" class="form-control form-control-sm" style="width:150px">
+          <!-- <select id="cv_type" class="form-control form-control-sm" style="width:150px">
             <option id="compact">Compact</option>
             <option id="extended">Extended</option>
-          </select>       
+          </select>        -->
         </div>
         <div class="col-4"></div>
         <div class="col-3" align="center">
@@ -48,18 +48,7 @@
       </div>
     </div>
     <script>
-      function getSelectedType() {
-        var type = document.getElementById('cv_type');
-        return type.options[type.selectedIndex].id;
-      };
-
-      var type_map = {
-        extended: 'E',
-        compact: 'C'
-      };
-
-      var base = 'https://raw.githubusercontent.com/7wmr/curriculum-vitae/release/out/CV-RICHARD-NEAVE-';
-      var url = base + type_map[getSelectedType()] +'.pdf';      // Loaded via <script> tag, create shortcut to access PDF.js exports.
+      var url = 'https://raw.githubusercontent.com/7wmr/curriculum-vitae/release/out/richard-neave-curriculum-vitae.pdf';
       var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
       // The workerSrc property shall be specified.
@@ -148,20 +137,14 @@
       };
       document.getElementById('download').addEventListener('click', onDownload);
 
-      function onTypeChange() {
-        var url = base + type_map[getSelectedType()] +'.pdf';
-        pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-          pdfDoc = pdfDoc_;
-          document.getElementById('page_count').textContent = pdfDoc.numPages;
+      pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfDoc = pdfDoc_;
+        document.getElementById('page_count').textContent = pdfDoc.numPages;
 
-          // Initial/first page rendering
-          pageNum = 1;
-          renderPage(pageNum);
-        });
-      };
-      document.getElementById('cv_type').addEventListener('change', onTypeChange, false);
-
-      onTypeChange();
+        // Initial/first page rendering
+        pageNum = 1;
+        renderPage(pageNum);
+      });
     </script>
   <body>
 </html>
